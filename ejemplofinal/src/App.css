@@ -1,0 +1,344 @@
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo y tipografía */
+body {
+  background-color: #141414;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Centrando todo en la página */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Títulos y Encabezados */
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e50914;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilos de la Grid de Películas */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Tarjetas de Películas */
+.movie-card {
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 3px solid #333;
+}
+
+.movie-card h3 {
+  font-size: 1.2rem;
+  margin: 0.8rem 0;
+  padding: 0 1rem;
+  font-weight: 600;
+}
+
+.movie-card p {
+  margin: 0 1rem 1rem;
+  font-size: 1rem;
+  color: #999;
+}
+
+/* Estilos del Filtro de Géneros */
+.filter {
+  margin: 1.5rem 0;
+}
+
+select {
+  padding: 0.8rem;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+select:hover {
+  background-color: #444;
+}
+
+/* Estilo de Botón de Favoritos */
+button {
+  background-color: #e50914;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background-color: #b20710;
+}
+
+button:active {
+  background-color: #900c3f;
+}
+
+/* Estilos para los Detalles de la Película */
+.movie-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.movie-detail img {
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.movie-detail h1 {
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  color: #fff;
+}
+
+.movie-detail p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #ccc;
+}
+
+.movie-detail button {
+  margin-top: 1.5rem;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+}
+
+/* Estilos para los Actores */
+ul {
+  padding-left: 1rem;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+em {
+  color: #e50914;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #e50914;
+  font-weight: bold;
+}
+
+/* Fondo de la Película en la Página de Detalles */
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.backdrop h1 {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para el iframe del Tráiler */
+iframe {
+  border: none;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  margin-top: 2rem;
+}
+
+/* Estilos para la Cabecera */
+header {
+  width: 100%;
+  padding: 20px;
+  background-color: #141414;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo Responsive para Pantallas Pequeñas */
+@media (max-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .movie-card h3 {
+    font-size: 1rem;
+  }
+
+  /* Títulos en Pantallas Pequeñas */
+  h2 {
+    font-size: 2rem;
+  }
+}
+/* Animación suave al pasar el mouse sobre las tarjetas */
+.movie-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+/* Efecto de pulsación para botones */
+button:active {
+  transform: scale(0.95);
+  background-color: #900c3f;
+}
+/* Sombra sutil en los títulos */
+h2, h1 {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+/* Estilo de select de géneros */
+select {
+  padding: 0.8rem;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:hover {
+  background-color: #444;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+/* Estilo para el header con un fondo translúcido */
+header {
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(20, 20, 20, 0.9); /* Fondo translúcido */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #e50914;
+}
+/* Fondo con desenfoque en la página de detalles */
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  padding: 3rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Estilos responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .movie-card h3 {
+    font-size: 1rem;
+  }
+}
+/* Efecto de fondo difuso para el iframe */
+iframe {
+  border: none;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.4); /* Fondo más suave */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+/* Diseño para pantallas móviles */
+@media (max-width: 480px) {
+  .movie-card {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 15px 30px;
+  }
+}
+/* Sombra más intensa para las tarjetas */
+.movie-card {
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Sombra más intensa */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
